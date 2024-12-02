@@ -15,11 +15,13 @@ function Add(){
 
     if((input.value<=nabidka.length) && (input.value>0) && (!isNaN(input.value))){
         kosik.push(nabidka[input.value - 1]);
-        //nabidka.slice(input.value, -1);
+        let cisilko = input.value - 1
+        nabidka.splice(cisilko, 1);
+        vypis(nabidka, "content");
     }
 
     else{
-        alert("Chyba")
+        alert("Chybiška sa vlódila.")
     }
     vypis(kosik, "user-cart");
 }
